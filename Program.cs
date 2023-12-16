@@ -2,28 +2,26 @@
 {
     static void Main()
     {
-        double[] numbers = { 1.14, 2.71, 3.55, 4.618, 5.2, 6.7 };
-        double max = numbers[0];
-        double min = numbers[0];
+        int[] numbers = { 1, 25, 3, 45, 5, 6, 74, 8, 9, 10 };
 
-        for (int i = 1; i < numbers.Length; i++)
-        {
-            if (numbers[i] > max)
-            {
-                max = numbers[i];
-            }
+        int CountN = CountEvenNumbers(numbers);
 
-            if (numbers[i] < min)
-            {
-                min = numbers[i];
-            }
-        }
-        double difference = max - min;
-
-        Console.WriteLine($"Макс элемент: {max}");
-        Console.WriteLine($"Мин элемент: {min}");
-        Console.WriteLine($"Разница между макс и мин элементами: {difference}");
+        Console.WriteLine($"Количество чётных чисел в массиве: {CountN}");
 
         Console.ReadLine();
+    }
+
+    static int CountEvenNumbers(int[] arr)
+    {
+        int count = 0;
+        foreach (int num in arr)
+        {
+            if (num % 2 == 0)
+            {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
